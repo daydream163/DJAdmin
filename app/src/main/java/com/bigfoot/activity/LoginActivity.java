@@ -23,6 +23,13 @@ public class LoginActivity extends SwipeBackActivity {
                 finish();
             }
         });
+
+        findViewById(R.id.btnSure).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 }

@@ -9,10 +9,8 @@ import android.view.KeyEvent;
 import android.widget.RadioGroup;
 
 import com.bigfoot.R;
-import com.bigfoot.fragment.BufferKnifeFragment;
 import com.bigfoot.fragment.MainPagerFragment;
 import com.bigfoot.fragment.MemberFragment;
-import com.bigfoot.ui.UIHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,9 +42,9 @@ public class MainActivity extends BaseFragmentActivity {
     }
 
     private void initData(Bundle savedInstanceState) {
-        fragmentTags = new ArrayList<>(Arrays.asList("HomeFragment", "ImFragment", "InterestFragment", "MemberFragment"));
+        fragmentTags = new ArrayList<>(Arrays.asList("HomeFragment", "MemberFragment"));
         currIndex = 0;
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             currIndex = savedInstanceState.getInt(CURR_INDEX);
             hideSavedFragment();
         }
@@ -54,7 +52,7 @@ public class MainActivity extends BaseFragmentActivity {
 
     private void hideSavedFragment() {
         Fragment fragment = fragmentManager.findFragmentByTag(fragmentTags.get(currIndex));
-        if(fragment != null) {
+        if (fragment != null) {
             fragmentManager.beginTransaction().hide(fragment).commit();
         }
     }
@@ -65,11 +63,14 @@ public class MainActivity extends BaseFragmentActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.foot_bar_home: currIndex = 0; break;
-                    case R.id.foot_bar_im: currIndex = 1; break;
-                    case R.id.foot_bar_interest: currIndex = 2; break;
-                    case R.id.main_footbar_user: currIndex = 3; break;
-                    default: break;
+                    case R.id.foot_bar_home:
+                        currIndex = 0;
+                        break;
+                    case R.id.main_footbar_user:
+                        currIndex = 1;
+                        break;
+                    default:
+                        break;
                 }
                 showFragment();
             }
@@ -78,18 +79,18 @@ public class MainActivity extends BaseFragmentActivity {
     }
 
     private void showFragment() {
-        if (currIndex == 3) {
-            UIHelper.showLogin(MainActivity.this);
-        }
+//        if (currIndex == 3) {
+//            UIHelper.showLogin(MainActivity.this);
+//        }
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = fragmentManager.findFragmentByTag(fragmentTags.get(currIndex));
-        if(fragment == null) {
+        if (fragment == null) {
             fragment = instantFragment(currIndex);
         }
         for (int i = 0; i < fragmentTags.size(); i++) {
             Fragment f = fragmentManager.findFragmentByTag(fragmentTags.get(i));
-            if(f != null && f.isAdded()) {
+            if (f != null && f.isAdded()) {
                 fragmentTransaction.hide(f);
             }
         }
@@ -104,11 +105,12 @@ public class MainActivity extends BaseFragmentActivity {
 
     private Fragment instantFragment(int currIndex) {
         switch (currIndex) {
-            case 0: return new MainPagerFragment();
-            case 1: return new BufferKnifeFragment();
-            case 2: return new BufferKnifeFragment();
-            case 3: return new MemberFragment();
-            default: return null;
+            case 0:
+                return new MainPagerFragment();
+            case 1:
+                return new MemberFragment();
+            default:
+                return null;
         }
     }
 
