@@ -48,6 +48,7 @@ public class UIHelper {
     public static void showLogin(Activity context){
         Intent intent = new Intent(context, LoginActivity.class);
         context.startActivity(intent);
+        context.finish();
     }
 
     public static void showHouseDetailActivity(Activity context){

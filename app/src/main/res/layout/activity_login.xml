@@ -4,6 +4,12 @@
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true">
 
+    <Button
+        android:id="@+id/btnBack"
+        style="@style/title_base_button"
+        android:background="@drawable/btn_back"
+        android:visibility="gone" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,8 +27,8 @@
             <RelativeLayout
                 android:id="@+id/layoutPhone"
                 android:layout_width="fill_parent"
-                android:visibility="gone"
-                android:layout_height="45.0dip">
+                android:layout_height="45.0dip"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/imgPhone"
@@ -61,8 +67,8 @@
             <RelativeLayout
                 android:id="@+id/layoutUser"
                 android:layout_width="fill_parent"
-                android:visibility="visible"
-                android:layout_height="45.0dip">
+                android:layout_height="45.0dip"
+                android:visibility="visible">
 
                 <ImageView
                     android:id="@+id/imgUser"
@@ -99,10 +105,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/layoutCode"
                 android:layout_width="fill_parent"
                 android:layout_height="45.0dip"
-                android:visibility="gone"
-                android:layout_below="@+id/layoutPhone">
+                android:layout_below="@+id/layoutPhone"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="fill_parent"
@@ -148,10 +155,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/layoutPwd"
                 android:layout_width="fill_parent"
                 android:layout_height="45.0dip"
-                android:visibility="visible"
-                android:layout_below="@+id/layoutUser">
+                android:layout_below="@+id/layoutUser"
+                android:visibility="visible">
 
                 <ImageView
                     android:layout_width="fill_parent"
@@ -192,8 +200,8 @@
             android:layout_marginTop="30.0dip"
             android:layout_marginRight="18.0dip"
             android:background="@drawable/btn_bg_gray"
-            android:clickable="false"
-            android:enabled="false"
+            android:clickable="true"
+            android:enabled="true"
             android:text="登录"
             android:textColor="#ffffffff"
             android:textSize="18.0sp" />
@@ -207,8 +215,8 @@
             android:layout_marginTop="20.0dip"
             android:layout_marginRight="22dp"
             android:background="@drawable/login_yzm_oval_shape_gray"
-            android:clickable="false"
-            android:enabled="false"
+            android:clickable="true"
+            android:enabled="true"
             android:text="其他登陆"
             android:textColor="#ff888888"
             android:textSize="14.0sp" />
