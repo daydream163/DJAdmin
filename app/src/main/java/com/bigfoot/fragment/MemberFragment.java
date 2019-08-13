@@ -86,7 +86,7 @@ public class MemberFragment extends Fragment {
         Map<String, String> param = new LinkedHashMap<>();
         param.put("token", SharedPreferences.getInstance().getString("token", null));
 
-        HttpClient.form("https://www.meiminger.com/api/common/getmngrbytoken.html", param, new HttpResponseHandler() {
+        HttpClient.form("https://www.meiminger.com/api/common/getmngrbytoken", param, new HttpResponseHandler() {
             @Override
             public void onSuccess(RestApiResponse response) {
                 if(response.isStatus()) {
