@@ -6,8 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSONObject;
 import com.bigfoot.R;
 import com.bigfoot.activity.LoginActivity;
 import com.bigfoot.http.HttpClient;
@@ -91,6 +93,9 @@ public class MemberFragment extends Fragment {
             public void onSuccess(RestApiResponse response) {
                 if(response.isStatus()) {
                     UIHelper.ToastMessage(context, "获取用户信息成功");
+                    TextView tvUserName = scrollView.getPullRootView().findViewById(R.id.tv_user_name);
+                    JSONObject user = JSONObject.parseObject(response.getData().toString());
+                    tvUserName.setText(user.getString("username"));
                 } else {
                     UIHelper.ToastMessage(context, "获取用户信息失败");
                 }
