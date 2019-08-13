@@ -22,6 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -40,7 +41,7 @@ public class HttpClient {
     private static final int MAX_REQUESTS_PER_HOST = 10;
     private static final String TAG = HttpClient.class.getSimpleName();
     private static final String UTF_8 = "UTF-8";
-    private static final MediaType MEDIA_TYPE = MediaType.parse("text/plain;");
+    private static final MediaType MEDIA_TYPE = MediaType.parse("text/x-markdown; charset=utf-8");
     private static OkHttpClient client;
 
     static {
@@ -95,7 +96,8 @@ public class HttpClient {
             @Override
             public void onResponse(Call call, Response response) {
                 try {
-                    RestApiResponse apiResponse = getRestApiResponse(response.body().toString());
+                    String body = response.body().toString();
+                    RestApiResponse apiResponse = getRestApiResponse(body);
                     handler.sendSuccessMessage(apiResponse);
                 } catch (Exception e) {
                     handler.sendFailureMessage(call.request(), e);
@@ -116,7 +118,7 @@ public class HttpClient {
         }
         String paramStr = "";
         if(param != null && param.size() > 0) {
-            paramStr = url += mapToQueryString(param);;
+            paramStr = mapToQueryString(param);
             url = url + "?" + paramStr;
         }
         RequestBody body = RequestBody.create(MEDIA_TYPE, paramStr);
@@ -139,22 +141,62 @@ public class HttpClient {
         });
     }
 
+    public static void form(String url, Map<String, String> param, final HttpResponseHandler handler) {
+        if (!isNetworkAvailable()) {
+            Toast.makeText(AppContext.getInstance(), R.string.no_network_connection_toast, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        FormBody.Builder body = new FormBody.Builder();
+        try {
+            for(Map.Entry<String, String> entry : param.entrySet()) {
+                body.add(entry.getKey(), URLEncoder.encode(entry.getValue(), UTF_8));
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body.build())
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                try {
+                    String body = response.body().string();
+                    RestApiResponse apiResponse = getRestApiResponse(body);
+                    handler.sendSuccessMessage(apiResponse);
+                } catch (Exception e) {
+                    handler.sendFailureMessage(call.request(), e);
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                handler.sendFailureMessage(call.request(), e);
+            }
+        });
+    }
+
     private static RestApiResponse getRestApiResponse(String responseBody) throws Exception {
         if(!isJsonString(responseBody)) {
             throw new Exception("server response not json string (response = " + responseBody + ")");
         }
         RestApiResponse apiResponse = JSON.parseObject(responseBody, RestApiResponse.class);
-        if(apiResponse == null && apiResponse.head == null) {
+        if(apiResponse == null ) {
             throw new Exception("server error (response = " + responseBody + ")");
         }
-        if(apiResponse.head.status == RestApiResponse.STATUS_SUCCESS) {
-            throw new Exception("server error (business status code = " + apiResponse.head.status + "; response =" + responseBody + ")");
-        }
+
         return apiResponse;
     }
 
     private static boolean isJsonString(String responseBody) {
-        return TextUtils.isEmpty(responseBody) && (responseBody.startsWith("{") && responseBody.endsWith("}"));
+        if (TextUtils.isEmpty(responseBody)) {
+            return false;
+        }
+        return  (responseBody.startsWith("{") && responseBody.endsWith("}"));
     }
 
     public static String mapToQueryString(Map<String, String> map) {
@@ -172,6 +214,8 @@ public class HttpClient {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
+        string.deleteCharAt(string.length() - 1);
         return string.toString();
     }
 

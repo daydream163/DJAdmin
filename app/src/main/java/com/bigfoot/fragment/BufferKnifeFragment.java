@@ -126,14 +126,14 @@ public class BufferKnifeFragment extends Fragment {
 
             @Override
             public void onSuccess(RestApiResponse response) {
-                listView.onRefreshComplete();
-                List<SearchShop> list = JSONArray.parseArray(response.body, SearchShop.class);
-                listView.updateLoadMoreViewText(list);
-                isLoadAll = list.size() < HttpClient.PAGE_SIZE;
-                if(pno == 1) {
-                    adapter.clear();
-                }
-                adapter.addAll(list);
+//                listView.onRefreshComplete();
+//                List<SearchShop> list = JSONArray.parseArray(response.body, SearchShop.class);
+//                listView.updateLoadMoreViewText(list);
+//                isLoadAll = list.size() < HttpClient.PAGE_SIZE;
+//                if(pno == 1) {
+//                    adapter.clear();
+//                }
+//                adapter.addAll(list);
                 pno++;
             }
 

@@ -1,19 +1,45 @@
 package com.bigfoot.http;
 
+import com.alibaba.fastjson.JSON;
+
+import java.io.Serializable;
+
 /**
  * Created by tiansj on 2016/11/30.
  */
 
-public class RestApiResponse {
+public class RestApiResponse implements Serializable {
 
-    public static final int STATUS_SUCCESS = 200;
-    public static final int STATUS_FAILURE = 500;
+    public boolean status;
+    public String msg;
+    public Object data;
 
-    public Head head;
-    public String body;
-
-    public static class Head {
-        public int status;
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 }
