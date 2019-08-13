@@ -22,39 +22,4 @@
         android:text="13521468432"
         android:textColor="@color/text_color_white"
         android:textSize="16sp" />
-
-    <LinearLayout
-        android:id="@+id/ll_action_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/transparent_half"
-        android:divider="@drawable/ic_img_line_v"
-        android:dividerPadding="16dp"
-        android:showDividers="middle">
-
-        <TextView
-            android:id="@+id/tv_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="13dp"
-            android:text="注册"
-            android:textColor="@color/text_color_white"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="13dp"
-            android:text="登录"
-            android:textColor="@color/text_color_white"
-            android:textSize="16sp" />
-    </LinearLayout>
 </RelativeLayout>

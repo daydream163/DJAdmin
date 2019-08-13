@@ -6,10 +6,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bigfoot.R;
+import com.bigfoot.activity.LoginActivity;
+import com.bigfoot.http.HttpClient;
+import com.bigfoot.http.HttpResponseHandler;
+import com.bigfoot.http.RestApiResponse;
 import com.bigfoot.ui.UIHelper;
 import com.bigfoot.ui.pulltozoomview.PullToZoomScrollViewEx;
+import com.bigfoot.utils.SharedPreferences;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import es.dmoral.toasty.Toasty;
+import okhttp3.Request;
 
 public class MemberFragment extends Fragment {
 
@@ -39,32 +51,8 @@ public class MemberFragment extends Fragment {
         scrollView.setZoomView(zoomView);
         scrollView.setScrollContentView(contentView);
 
-        headView.findViewById(R.id.tv_register).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UIHelper.showLogin(getActivity());
-            }
-        });
 
-        headView.findViewById(R.id.tv_login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UIHelper.showLogin(getActivity());
-            }
-        });
-
-
-        scrollView.getPullRootView().findViewById(R.id.textBalance).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        scrollView.getPullRootView().findViewById(R.id.textRecord).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        scrollView.getPullRootView().findViewById(R.id.textAttention).setOnClickListener(new View.OnClickListener() {
+        scrollView.getPullRootView().findViewById(R.id.textUserSecurity).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             }
@@ -74,7 +62,7 @@ public class MemberFragment extends Fragment {
             public void onClick(View v) {
             }
         });
-        scrollView.getPullRootView().findViewById(R.id.textCalculator).setOnClickListener(new View.OnClickListener() {
+        scrollView.getPullRootView().findViewById(R.id.textAbout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             }
@@ -95,6 +83,23 @@ public class MemberFragment extends Fragment {
     }
 
     private void initData() {
+        Map<String, String> param = new LinkedHashMap<>();
+        param.put("token", SharedPreferences.getInstance().getString("token", null));
 
+        HttpClient.form("https://www.meiminger.com/api/common/getmngrbytoken.html", param, new HttpResponseHandler() {
+            @Override
+            public void onSuccess(RestApiResponse response) {
+                if(response.isStatus()) {
+                    UIHelper.ToastMessage(context, "获取用户信息成功");
+                } else {
+                    UIHelper.ToastMessage(context, "获取用户信息失败");
+                }
+            }
+
+            @Override
+            public void onFailure(Request request, Exception e) {
+                UIHelper.ToastMessage(context, "获取用户信息失败");
+            }
+        });
     }
 }
