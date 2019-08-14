@@ -9,8 +9,8 @@ import android.view.KeyEvent;
 import android.widget.RadioGroup;
 
 import com.bigfoot.R;
-import com.bigfoot.fragment.MainPagerFragment;
 import com.bigfoot.fragment.MemberFragment;
+import com.bigfoot.fragment.ShopFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,7 +42,7 @@ public class MainActivity extends BaseFragmentActivity {
     }
 
     private void initData(Bundle savedInstanceState) {
-        fragmentTags = new ArrayList<>(Arrays.asList("HomeFragment", "MemberFragment"));
+        fragmentTags = new ArrayList<>(Arrays.asList("ShopFragment", "MemberFragment"));
         currIndex = 0;
         if (savedInstanceState != null) {
             currIndex = savedInstanceState.getInt(CURR_INDEX);
@@ -106,7 +106,7 @@ public class MainActivity extends BaseFragmentActivity {
     private Fragment instantFragment(int currIndex) {
         switch (currIndex) {
             case 0:
-                return new MainPagerFragment();
+                return new ShopFragment();
             case 1:
                 return new MemberFragment();
             default:

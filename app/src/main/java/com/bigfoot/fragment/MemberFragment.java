@@ -7,11 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bigfoot.R;
-import com.bigfoot.activity.LoginActivity;
 import com.bigfoot.http.HttpClient;
 import com.bigfoot.http.HttpResponseHandler;
 import com.bigfoot.http.RestApiResponse;
@@ -22,7 +20,6 @@ import com.bigfoot.utils.SharedPreferences;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import es.dmoral.toasty.Toasty;
 import okhttp3.Request;
 
 public class MemberFragment extends Fragment {
@@ -45,7 +42,7 @@ public class MemberFragment extends Fragment {
     }
 
     void initView() {
-        scrollView = (PullToZoomScrollViewEx) root.findViewById(R.id.scrollView);
+        scrollView = root.findViewById(R.id.scrollView);
         View headView = LayoutInflater.from(context).inflate(R.layout.member_head_view, null, false);
         View zoomView = LayoutInflater.from(context).inflate(R.layout.member_zoom_view, null, false);
         View contentView = LayoutInflater.from(context).inflate(R.layout.member_content_view, null, false);
@@ -91,7 +88,7 @@ public class MemberFragment extends Fragment {
         HttpClient.form("https://www.meiminger.com/api/common/getmngrbytoken", param, new HttpResponseHandler() {
             @Override
             public void onSuccess(RestApiResponse response) {
-                if(response.isStatus()) {
+                if (response.isStatus()) {
                     UIHelper.ToastMessage(context, "获取用户信息成功");
                     TextView tvUserName = scrollView.getPullRootView().findViewById(R.id.tv_user_name);
                     JSONObject user = JSONObject.parseObject(response.getData().toString());

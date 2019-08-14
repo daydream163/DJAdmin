@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
     <Button
@@ -17,7 +17,7 @@
 
         <RelativeLayout
             android:id="@+id/rlLogin"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="90.0dip"
             android:layout_marginLeft="18.0dip"
             android:layout_marginTop="200.0dip"
@@ -26,7 +26,7 @@
 
             <RelativeLayout
                 android:id="@+id/layoutPhone"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="45.0dip"
                 android:visibility="gone">
 
@@ -40,8 +40,8 @@
 
                 <EditText
                     android:id="@+id/phone"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imgPhone"
                     android:background="@null"
                     android:hint="手机号"
@@ -66,7 +66,7 @@
 
             <RelativeLayout
                 android:id="@+id/layoutUser"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="45.0dip"
                 android:visibility="visible">
 
@@ -80,8 +80,8 @@
 
                 <EditText
                     android:id="@+id/user"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imgUser"
                     android:background="@null"
                     android:hint="用户名"
@@ -105,13 +105,13 @@
 
             <RelativeLayout
                 android:id="@+id/layoutCode"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="45.0dip"
                 android:layout_below="@+id/layoutPhone"
                 android:visibility="gone">
 
                 <ImageView
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="0.5dip"
                     android:background="#ffdddddd" />
 
@@ -125,8 +125,8 @@
 
                 <EditText
                     android:id="@+id/codePhone"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imgCodePhone"
                     android:background="@null"
                     android:hint="验证码"
@@ -155,13 +155,13 @@
 
             <RelativeLayout
                 android:id="@+id/layoutPwd"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="45.0dip"
                 android:layout_below="@+id/layoutUser"
                 android:visibility="visible">
 
                 <ImageView
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="0.5dip"
                     android:background="#ffdddddd" />
 
@@ -175,8 +175,8 @@
 
                 <EditText
                     android:id="@+id/password"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imgCodePwd"
                     android:background="@null"
                     android:hint="密码"
@@ -191,7 +191,7 @@
 
         <Button
             android:id="@+id/btnSure"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="40.0dip"
             android:layout_below="@+id/rlLogin"
             android:layout_marginLeft="18.0dip"
