@@ -72,7 +72,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="20dp"
-                        android:text="￥1258.00"
+                        android:text="58"
                         android:textColor="@color/gray" />
 
                     <TextView

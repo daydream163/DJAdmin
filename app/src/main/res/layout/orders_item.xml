@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/layItemTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_image" />
+
+        <TextView
+            android:id="@+id/tvProductNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/logo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/logo"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="货号："
+            android:textColor="#101010"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/logo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toRightOf="@+id/logo"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="地址：放假了大解放了看到就阿狸分开多久啊放了多久啊离开封疆大吏减肥大事了,放了多久啊离开封疆大吏减肥大事了"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_13" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layItemTop">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="货号："
+            android:textColor="#101010"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="3dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="地址：放假了大解放了看到就阿狸分开多久啊放了多久啊离开封疆大吏减肥大事了,放了多久啊离开封疆大吏减肥大事了"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_13" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

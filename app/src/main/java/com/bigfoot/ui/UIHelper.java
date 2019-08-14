@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.bigfoot.activity.DealsActivity;
 import com.bigfoot.activity.HouseDetailActivity;
 import com.bigfoot.activity.LoginActivity;
 import com.bigfoot.activity.MainActivity;
+import com.bigfoot.activity.OrdersActivity;
 import com.bigfoot.activity.SingleProductActiviy;
 
 /**
@@ -61,5 +63,15 @@ public class UIHelper {
         Intent intent = new Intent(context, SingleProductActiviy.class);
         context.startActivity(intent);
         context.finish();
+    }
+
+    public static void showDealsActivity(Activity context){
+        Intent intent = new Intent(context, DealsActivity.class);
+        context.startActivity(intent);
+    }
+
+    public static void showOrdersActivity(Activity context){
+        Intent intent = new Intent(context, OrdersActivity.class);
+        context.startActivity(intent);
     }
 }

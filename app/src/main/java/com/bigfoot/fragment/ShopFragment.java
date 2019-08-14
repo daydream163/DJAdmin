@@ -32,6 +32,20 @@ public class ShopFragment extends Fragment {
 //        TextView head = root.findViewById(R.id.textHeadTitle);
 //        head.setText("张三的店");
 
+        root.findViewById(R.id.layDeals).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.showDealsActivity(context);
+            }
+        });
+
+        root.findViewById(R.id.layOrders).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.showOrdersActivity(context);
+            }
+        });
+
         root.findViewById(R.id.ibArrow).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

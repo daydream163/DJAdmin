@@ -24,7 +24,8 @@
         <activity android:name=".activity.ImageGalleryActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activity.SettingActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activity.SingleProductActiviy" android:screenOrientation="portrait"/>
-
+        <activity android:name=".activity.DealsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.OrdersActivity" android:screenOrientation="portrait"/>
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
