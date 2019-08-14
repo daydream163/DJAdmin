@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bigfoot.R;
+import com.bigfoot.ui.UIHelper;
 
 public class ShopFragment extends Fragment {
     private Activity context;
@@ -31,17 +32,17 @@ public class ShopFragment extends Fragment {
 //        TextView head = root.findViewById(R.id.textHeadTitle);
 //        head.setText("张三的店");
 
-        root.findViewById(R.id.layArrow).setOnClickListener(new View.OnClickListener() {
+        root.findViewById(R.id.ibArrow).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        root.findViewById(R.id.layAdd).setOnClickListener(new View.OnClickListener() {
+        root.findViewById(R.id.ibAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UIHelper.showSingleProductActiviy(context);
             }
         });
     }

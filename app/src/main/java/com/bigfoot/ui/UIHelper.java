@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.bigfoot.activity.HouseDetailActivity;
 import com.bigfoot.activity.LoginActivity;
 import com.bigfoot.activity.MainActivity;
+import com.bigfoot.activity.SingleProductActiviy;
 
 /**
  * 应用程序UI工具包：封装UI相关的一些操作
@@ -56,4 +57,9 @@ public class UIHelper {
         context.startActivity(intent);
     }
 
+    public static void showSingleProductActiviy(Activity context){
+        Intent intent = new Intent(context, SingleProductActiviy.class);
+        context.startActivity(intent);
+        context.finish();
+    }
 }
