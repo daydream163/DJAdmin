@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bigfoot.R;
-import com.bigfoot.activity.LoginActivity;
 import com.bigfoot.http.HttpClient;
 import com.bigfoot.http.HttpResponseHandler;
 import com.bigfoot.http.RestApiResponse;
@@ -39,7 +38,8 @@ public class ShopFragment extends Fragment {
         context = getActivity();
 
         initView();
-        initData();
+        initDataOrders();
+        initDataGoods();
     }
 
     void initView() {
@@ -75,7 +75,7 @@ public class ShopFragment extends Fragment {
         });
     }
 
-    private void initData() {
+    private void initDataOrders() {
         Map<String, String> param = new LinkedHashMap<>();
         param.put("token", SharedPreferences.getInstance().getString("token", null));
 
@@ -83,7 +83,7 @@ public class ShopFragment extends Fragment {
             @Override
             public void onSuccess(RestApiResponse response) {
                 if(response.isStatus()) {
-                    updateView(JSONObject.parseObject(response.getData().toString()));
+                    updateOrdersView(JSONObject.parseObject(response.getData().toString()));
                 } else {
                     Toasty.error(context, response.getMsg(), Toast.LENGTH_SHORT, true).show();
                 }
@@ -96,7 +96,7 @@ public class ShopFragment extends Fragment {
         });
     }
 
-    private void updateView(JSONObject data) {
+    private void updateOrdersView(JSONObject data) {
         TextView unpaid = root.findViewById(R.id.unpaid);
         unpaid.setText(data.getString("payment"));
 
@@ -105,5 +105,37 @@ public class ShopFragment extends Fragment {
 
         TextView shipped = root.findViewById(R.id.shipped);
         shipped.setText(data.getString("receive"));
+    }
+
+    private void initDataGoods() {
+        Map<String, String> param = new LinkedHashMap<>();
+        param.put("token", SharedPreferences.getInstance().getString("token", null));
+
+        HttpClient.form("https://www.meiminger.com/api/appgoods/getstatis", param, new HttpResponseHandler() {
+            @Override
+            public void onSuccess(RestApiResponse response) {
+                if(response.isStatus()) {
+                    updateGoodsView(JSONObject.parseObject(response.getData().toString()));
+                } else {
+                    Toasty.error(context, response.getMsg(), Toast.LENGTH_SHORT, true).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Request request, Exception e) {
+                Toasty.error(context, "数据加载失败", Toast.LENGTH_SHORT, true).show();
+            }
+        });
+    }
+
+    private void updateGoodsView(JSONObject data) {
+        TextView all = root.findViewById(R.id.all);
+        all.setText(data.getString("totalGoods"));
+
+        TextView selling = root.findViewById(R.id.selling);
+        selling.setText(data.getString("totalMarketableUp"));
+
+        TextView soldout = root.findViewById(R.id.soldout);
+        soldout.setText(data.getString("totalMarketableDown"));
     }
 }
