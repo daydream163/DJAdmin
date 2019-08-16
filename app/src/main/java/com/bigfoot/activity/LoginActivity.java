@@ -106,7 +106,7 @@ public class LoginActivity extends SwipeBackActivity {
                     UIHelper.showHome(LoginActivity.this);
                     SharedPreferences.getInstance().putString("token", response.getData().toString());
                 } else {
-                    Toasty.error(LoginActivity.this, "登录失败", Toast.LENGTH_SHORT, true).show();
+                    Toasty.error(LoginActivity.this, response.getMsg(), Toast.LENGTH_SHORT, true).show();
                 }
             }
 
