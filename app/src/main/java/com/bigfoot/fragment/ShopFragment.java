@@ -60,6 +60,27 @@ public class ShopFragment extends Fragment {
             }
         });
 
+        root.findViewById(R.id.layUnpaid).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        root.findViewById(R.id.layOverhang).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        root.findViewById(R.id.layShipped).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         root.findViewById(R.id.ibArrow).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

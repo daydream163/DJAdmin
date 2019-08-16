@@ -1,80 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:layout_height="100dp"
+    android:background="@color/white">
 
     <RelativeLayout
-        android:id="@+id/layItemTop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:orientation="horizontal">
+        android:layout_height="100dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/white">
 
         <ImageView
-            android:id="@+id/logo"
-            android:layout_width="60dp"
+            android:layout_width="110dp"
             android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/default_image" />
-
-        <TextView
-            android:id="@+id/tvProductNo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/logo"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp"
-            android:layout_toRightOf="@+id/logo"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="货号："
-            android:textColor="#101010"
-            android:textSize="@dimen/text_size_16" />
-
-        <TextView
-            android:id="@+id/address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/logo"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="3dp"
-            android:layout_toRightOf="@+id/logo"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="地址：放假了大解放了看到就阿狸分开多久啊放了多久啊离开封疆大吏减肥大事了,放了多久啊离开封疆大吏减肥大事了"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_13" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layItemTop">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="货号："
-            android:textColor="#101010"
-            android:textSize="@dimen/text_size_16" />
-
+            android:id="@+id/imageView"
+            android:src="@drawable/default_image"
+            android:layout_centerVertical="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="2室1厅90平米"
+            android:id="@+id/house_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="3dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="地址：放假了大解放了看到就阿狸分开多久啊放了多久啊离开封疆大吏减肥大事了,放了多久啊离开封疆大吏减肥大事了"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_alignTop="@+id/imageView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="西南"
+            android:id="@+id/direction"
             android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_12"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/house_title"
+            android:layout_toRightOf="@+id/imageView" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第5层，共24层"
+            android:id="@+id/floor"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_12"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/direction"
+            android:layout_toRightOf="@+id/imageView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="唯一住房"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textView"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_12"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无贷款"
+            android:id="@+id/textView2"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_12"
+            android:layout_marginLeft="5dp"
+            android:layout_alignTop="@+id/textView"
+            android:layout_toRightOf="@+id/textView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="300"
+            android:textSize="@dimen/text_size_18"
+            android:textColor="@color/orange"
+            android:id="@+id/price"
+            android:layout_alignTop="@+id/house_title"
+            android:layout_toLeftOf="@+id/priceUnit"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="万"
+            android:textColor="@color/orange"
+            android:id="@+id/priceUnit"
+            android:textSize="@dimen/text_size_12"
+            android:layout_marginTop="5dp"
+            android:layout_alignTop="@+id/house_title"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电话验证"
+            android:id="@+id/phone"
+            android:textSize="@dimen/text_size_12"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/priceUnit"
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
-
-
 </RelativeLayout>

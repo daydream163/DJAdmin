@@ -17,61 +17,66 @@ import com.bigfoot.activity.SingleProductActiviy;
  */
 public class UIHelper {
 
-	public final static String TAG = "UIHelper";
+    public final static String TAG = "UIHelper";
 
-	public final static int RESULT_OK = 0x00;
-	public final static int REQUEST_CODE = 0x01;
+    public final static int RESULT_OK = 0x00;
+    public final static int REQUEST_CODE = 0x01;
 
-	public static void ToastMessage(Context cont, String msg) {
-        if(cont == null || msg == null) {
+    public static void ToastMessage(Context cont, String msg) {
+        if (cont == null || msg == null) {
             return;
         }
-		Toast.makeText(cont, msg, Toast.LENGTH_SHORT).show();
-	}
+        Toast.makeText(cont, msg, Toast.LENGTH_SHORT).show();
+    }
 
-	public static void ToastMessage(Context cont, int msg) {
-        if(cont == null || msg <= 0) {
+    public static void ToastMessage(Context cont, int msg) {
+        if (cont == null || msg <= 0) {
             return;
         }
-		Toast.makeText(cont, msg, Toast.LENGTH_SHORT).show();
-	}
+        Toast.makeText(cont, msg, Toast.LENGTH_SHORT).show();
+    }
 
-	public static void ToastMessage(Context cont, String msg, int time) {
-        if(cont == null || msg == null) {
+    public static void ToastMessage(Context cont, String msg, int time) {
+        if (cont == null || msg == null) {
             return;
         }
-		Toast.makeText(cont, msg, time).show();
-	}
+        Toast.makeText(cont, msg, time).show();
+    }
 
-    public static void showHome(Activity context){
+    public static void showHome(Activity context) {
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
     }
 
-    public static void showLogin(Activity context){
+    public static void showLogin(Activity context) {
         Intent intent = new Intent(context, LoginActivity.class);
         context.startActivity(intent);
         context.finish();
     }
 
-    public static void showHouseDetailActivity(Activity context){
+    public static void showHouseDetailActivity(Activity context) {
         Intent intent = new Intent(context, HouseDetailActivity.class);
         context.startActivity(intent);
     }
 
-    public static void showSingleProductActiviy(Activity context){
+    public static void showSingleProductActiviy(Activity context) {
         Intent intent = new Intent(context, SingleProductActiviy.class);
         context.startActivity(intent);
         context.finish();
     }
 
-    public static void showDealsActivity(Activity context){
+    public static void showDealsActivity(Activity context) {
         Intent intent = new Intent(context, DealsActivity.class);
         context.startActivity(intent);
     }
 
-    public static void showOrdersActivity(Activity context){
+    public static void showOrdersActivity(Activity context) {
         Intent intent = new Intent(context, OrdersActivity.class);
         context.startActivity(intent);
     }
+
+    public static void showGoodsActivity() {
+
+    }
+
 }
