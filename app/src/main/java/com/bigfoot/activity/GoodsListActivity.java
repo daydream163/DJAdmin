@@ -29,7 +29,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Request;
 
-public class GoodsActivity extends BaseFragmentActivity {
+public class GoodsListActivity extends BaseFragmentActivity {
 
     private SearchParam param;
     private int pno = 1;
@@ -64,12 +64,16 @@ public class GoodsActivity extends BaseFragmentActivity {
     }
 
     private void initView() {
-        adapter = new QuickAdapter<GoodsList>(GoodsActivity.this, R.layout.activity_goods_list_item) {
+        adapter = new QuickAdapter<GoodsList>(GoodsListActivity.this, R.layout.activity_goods_list_item) {
             @Override
             protected void convert(BaseAdapterHelper helper, GoodsList goods) {
-                helper.setImageUrl(R.id.imageView, goods.getImage())
+                helper.setImageUrl(R.id.ivGoods, goods.getImage())
                         .setText(R.id.goodsNo, goods.getBn())
-                        .setText(R.id.goodDesc, goods.getBrief());
+                        .setText(R.id.goodDesc, goods.getName())
+                        .setText(R.id.retailPrice, goods.getPrice().toString())
+                        .setText(R.id.marketPrice, goods.getMktprice().toString())
+                        .setText(R.id.tvOrderId, String.valueOf(goods.getBuy_count()))
+                        .setText(R.id.tvRepertory, String.valueOf(goods.getTotalstock()));
             }
         };
 
@@ -94,7 +98,7 @@ public class GoodsActivity extends BaseFragmentActivity {
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                UIHelper.showHouseDetailActivity(GoodsActivity.this);
+                UIHelper.showHouseDetailActivity(GoodsListActivity.this);
             }
         });
 
@@ -102,9 +106,9 @@ public class GoodsActivity extends BaseFragmentActivity {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
                 if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
-                    Picasso.with(GoodsActivity.this).pauseTag(GoodsActivity.this);
+                    Picasso.with(GoodsListActivity.this).pauseTag(GoodsListActivity.this);
                 } else {
-                    Picasso.with(GoodsActivity.this).resumeTag(GoodsActivity.this);
+                    Picasso.with(GoodsListActivity.this).resumeTag(GoodsListActivity.this);
                 }
             }
 
@@ -154,19 +158,19 @@ public class GoodsActivity extends BaseFragmentActivity {
     @Override
     public void onResume() {
         super.onResume();
-        Picasso.with(GoodsActivity.this).resumeTag(GoodsActivity.this);
+        Picasso.with(GoodsListActivity.this).resumeTag(GoodsListActivity.this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        Picasso.with(GoodsActivity.this).pauseTag(GoodsActivity.this);
+        Picasso.with(GoodsListActivity.this).pauseTag(GoodsListActivity.this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Picasso.with(GoodsActivity.this).cancelTag(GoodsActivity.this);
+        Picasso.with(GoodsListActivity.this).cancelTag(GoodsListActivity.this);
     }
 
 }

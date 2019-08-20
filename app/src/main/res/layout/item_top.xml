@@ -12,7 +12,7 @@
         android:paddingRight="10dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivGoods"
             android:layout_width="110dp"
             android:layout_height="80dp"
             android:layout_centerVertical="true"
@@ -22,9 +22,9 @@
             android:id="@+id/goodsNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView"
+            android:layout_alignTop="@+id/ivGoods"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/imageView"
+            android:layout_toRightOf="@+id/ivGoods"
             android:text="货号：10058"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_18" />
@@ -36,7 +36,7 @@
             android:layout_below="@+id/goodsNo"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/imageView"
+            android:layout_toRightOf="@+id/ivGoods"
             android:text="特步女鞋 2019秋季时尚款"
             android:textColor="@color/gray"
             android:textSize="@dimen/text_size_16" />
@@ -48,7 +48,7 @@
             android:layout_below="@+id/goodDesc"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_toRightOf="@+id/imageView"
+            android:layout_toRightOf="@+id/ivGoods"
             android:text="零售价:"
             android:textColor="@color/gray"
             android:textSize="@dimen/text_size_16" />

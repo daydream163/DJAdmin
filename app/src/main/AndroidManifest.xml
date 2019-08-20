@@ -45,7 +45,10 @@
             android:name=".activity.OrdersActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.GoodsActivity"
+            android:name=".activity.GoodsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OrdersListActivity"
             android:screenOrientation="portrait" />
     </application>
 

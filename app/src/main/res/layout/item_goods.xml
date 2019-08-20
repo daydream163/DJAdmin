@@ -13,7 +13,7 @@
         android:paddingBottom="10dp">
 
         <TextView
-            android:id="@+id/sales"
+            android:id="@+id/orderId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -23,12 +23,12 @@
             android:textSize="@dimen/text_size_16" />
 
         <TextView
-            android:id="@+id/tvSales"
+            android:id="@+id/tvOrderId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/sales"
+            android:layout_toRightOf="@+id/orderId"
             android:text="48"
             android:textColor="@color/gray"
             android:textSize="@dimen/text_size_16" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/tvSales"
+            android:layout_toRightOf="@+id/tvOrderId"
             android:text="库存:"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_16" />
@@ -62,7 +62,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:text="编辑"
-            android:layout_below="@+id/sales"/>
+            android:layout_below="@+id/orderId"/>
 
         <Button
             android:id="@+id/btnPutAway"
@@ -72,7 +72,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:text="上架"
-            android:layout_below="@+id/sales"/>
+            android:layout_below="@+id/orderId"/>
 
         <Button
             android:id="@+id/btnDelete"
@@ -82,7 +82,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:text="删除"
-            android:layout_below="@+id/sales"/>
+            android:layout_below="@+id/orderId"/>
 
     </RelativeLayout>
 </RelativeLayout>

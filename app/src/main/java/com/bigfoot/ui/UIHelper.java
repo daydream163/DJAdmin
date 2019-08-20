@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.bigfoot.activity.DealsActivity;
-import com.bigfoot.activity.GoodsActivity;
+import com.bigfoot.activity.GoodsListActivity;
 import com.bigfoot.activity.HouseDetailActivity;
 import com.bigfoot.activity.LoginActivity;
 import com.bigfoot.activity.MainActivity;
 import com.bigfoot.activity.OrdersActivity;
+import com.bigfoot.activity.OrdersListActivity;
 import com.bigfoot.activity.SingleProductActiviy;
 
 /**
@@ -77,8 +78,16 @@ public class UIHelper {
         context.startActivity(intent);
     }
 
-    public static void showGoodsActivity(Activity context, int type) {
-        Intent intent = new Intent(context, GoodsActivity.class);
+    public static void showGoodsListActivity(Activity context, int type) {
+        Intent intent = new Intent(context, GoodsListActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("type", type);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
+
+    public static void showOrdersListActivity(Activity context, int type) {
+        Intent intent = new Intent(context, OrdersListActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt("type", type);
         intent.putExtras(bundle);

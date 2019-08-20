@@ -63,56 +63,56 @@ public class ShopFragment extends Fragment {
         root.findViewById(R.id.layUnpaid).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UIHelper.showOrdersListActivity(context, 1);
             }
         });
 
         root.findViewById(R.id.layOverhang).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UIHelper.showOrdersListActivity(context, 2);
             }
         });
 
         root.findViewById(R.id.layShipped).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UIHelper.showOrdersListActivity(context, 3);
             }
         });
 
         root.findViewById(R.id.ibArrow).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UIHelper.showOrdersListActivity(context, 4);
             }
         });
 
         root.findViewById(R.id.layAll).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.showGoodsActivity(context, 1);
+                UIHelper.showGoodsListActivity(context, 1);
             }
         });
 
         root.findViewById(R.id.laySelling).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.showGoodsActivity(context, 2);
+                UIHelper.showGoodsListActivity(context, 2);
             }
         });
 
         root.findViewById(R.id.laySoldout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.showGoodsActivity(context, 3);
+                UIHelper.showGoodsListActivity(context, 3);
             }
         });
 
         root.findViewById(R.id.layTostayon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.showGoodsActivity(context, 4);
+                UIHelper.showGoodsListActivity(context, 4);
             }
         });
 

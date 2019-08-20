@@ -6,84 +6,40 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="120dp"
         android:background="@color/white"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp">
 
         <TextView
-            android:id="@+id/sales"
+            android:id="@+id/orderId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="颜色:"
+            android:text="订单号码:"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_12" />
 
         <TextView
-            android:id="@+id/tvSales"
+            android:id="@+id/tvOrderId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/sales"
-            android:text="白色"
+            android:layout_toRightOf="@+id/orderId"
+            android:text="2019080929471"
             android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_16" />
-
-        <TextView
-            android:id="@+id/repertory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/tvSales"
-            android:text="尺码:"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
-
-        <TextView
-            android:id="@+id/tvRepertory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/repertory"
-            android:text="41"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_16" />
-
-        <TextView
-            android:id="@+id/count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/tvRepertory"
-            android:text="数量:"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
-
-        <TextView
-            android:id="@+id/tvCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/count"
-            android:text="3"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_12" />
 
         <TextView
             android:id="@+id/client"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sales"
+            android:layout_below="@+id/orderId"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="客户信息:"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_12" />
@@ -92,9 +48,9 @@
             android:id="@+id/tvClient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sales"
+            android:layout_below="@+id/orderId"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/client"
             android:text="史玉萍 13800138000"
             android:textColor="@color/gray"
@@ -153,7 +109,7 @@
             android:layout_below="@+id/delivery"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:text="快递单号:"
+            android:text="快递状态:"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_12" />
 
