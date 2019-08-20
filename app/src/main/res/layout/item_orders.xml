@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/sales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="颜色:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvSales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/sales"
+            android:text="白色"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/repertory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tvSales"
+            android:text="尺码:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvRepertory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/repertory"
+            android:text="41"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tvRepertory"
+            android:text="数量:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/count"
+            android:text="3"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sales"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="客户信息:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/tvClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sales"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/client"
+            android:text="史玉萍 13800138000"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/client"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="收件信息:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/client"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/address"
+            android:text="北京市海淀区东北旺西路8号院35号楼5层501室"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="发货时间:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/tvDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/delivery"
+            android:text="2019-08-19 11:23:47"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/delivery"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="快递单号:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12" />
+
+        <TextView
+            android:id="@+id/tvExpress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/delivery"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/express"
+            android:text="100245784120 圆通快递"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_12" />
+
+    </RelativeLayout>
+</RelativeLayout>

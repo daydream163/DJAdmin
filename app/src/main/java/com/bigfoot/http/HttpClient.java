@@ -220,7 +220,7 @@ public class HttpClient {
     }
 
     //*************************************************************//
-    public static final int PAGE_SIZE = 30;
+    public static final int PAGE_SIZE = 10;
     private static final String HTTP_DOMAIN = "http://sye.zhongsou.com/ent/rest";
     private static final String SHOP_RECOMMEND = "dpSearch.recommendShop"; // 推荐商家
     public static void getRecommendShops(SearchParam param, HttpResponseHandler httpResponseHandler) {

@@ -89,10 +89,6 @@ public class LoginActivity extends SwipeBackActivity {
         });
     }
 
-    private void initView() {
-
-    }
-
     private void login(final String user, final String password) {
 
         Map<String, String> param = new LinkedHashMap<>();

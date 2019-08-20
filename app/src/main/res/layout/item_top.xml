@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/default_image" />
+
+        <TextView
+            android:id="@+id/goodsNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:text="货号：10058"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18" />
+
+        <TextView
+            android:id="@+id/goodDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goodsNo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:text="特步女鞋 2019秋季时尚款"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/retail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goodDesc"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:text="零售价:"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/retailPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goodDesc"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/retail"
+            android:text="300"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goodDesc"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/retailPrice"
+            android:text="市场价:"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/marketPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goodDesc"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/market"
+            android:text="300"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_16" />
+    </RelativeLayout>
+</RelativeLayout>

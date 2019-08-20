@@ -3,9 +3,11 @@ package com.bigfoot.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import com.bigfoot.activity.DealsActivity;
+import com.bigfoot.activity.GoodsActivity;
 import com.bigfoot.activity.HouseDetailActivity;
 import com.bigfoot.activity.LoginActivity;
 import com.bigfoot.activity.MainActivity;
@@ -75,8 +77,12 @@ public class UIHelper {
         context.startActivity(intent);
     }
 
-    public static void showGoodsActivity() {
-
+    public static void showGoodsActivity(Activity context, int type) {
+        Intent intent = new Intent(context, GoodsActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("type", type);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
     }
 
 }
